@@ -1,0 +1,777 @@
+What is the weather like today?
+Is it sunny outside?
+Will it rain today?
+Is it cloudy right now?
+How warm is it today?
+Is it cold outside?
+What’s the temperature today?
+Is it windy today?
+Will there be a storm?
+Is it humid today?
+Is it dry outside?
+Is there fog this morning?
+Will it snow today?
+Is it raining right now?
+Is there a chance of rain?
+How hot will it get today?
+Will it be chilly tonight?
+Is there a weather warning?
+Is the sun shining?
+Is it overcast?
+Will it be clear tonight?
+Is there a breeze?
+Is it muggy today?
+Is it freezing outside?
+Will it hail today?
+Is there a thunderstorm coming?
+Is it drizzling?
+Is it pouring rain?
+Is it partly cloudy?
+Is it mostly sunny?
+Will it be warm tomorrow?
+Is it cool outside?
+Is it snowing right now?
+Is there sleet today?
+Will it be foggy tomorrow?
+Is it raining in the afternoon?
+Is it sunny in the morning?
+Will it be windy tomorrow?
+Is it humid tonight?
+Is it dry this evening?
+Is there a tornado warning?
+Is there a flood warning?
+Is it raining in my area?
+Is it snowing in my city?
+Will it be hot this weekend?
+Is it cold this morning?
+Is it breezy outside?
+Is it stormy today?
+Is it raining downtown?
+Is it sunny at the park?
+Will it be cloudy later?
+Is it raining at the airport?
+Is it snowing in the mountains?
+Is it sunny at the beach?
+Will it be cold tomorrow?
+Is it warm this afternoon?
+Is it raining at school?
+Is it sunny at work?
+Will it be humid this weekend?
+Is it dry tomorrow?
+Is it foggy downtown?
+Is it raining in the suburbs?
+Is it snowing in the countryside?
+Will it be sunny next week?
+Is it cloudy this evening?
+Is it windy at the lake?
+Is it raining at the mall?
+Is it sunny at the stadium?
+Will it be cold next week?
+Is it warm tonight?
+Is it raining at the train station?
+Is it sunny at the zoo?
+Will it be humid next week?
+Is it dry next week?
+Is it foggy at the airport?
+Is it raining at the university?
+Is it snowing at the ski resort?
+Will it be sunny this afternoon?
+Is it cloudy at the park?
+Is it windy at the beach?
+Is it raining at the hospital?
+Is it sunny at the library?
+Will it be cold this evening?
+Is it warm at the restaurant?
+Is it raining at the bus stop?
+Is it sunny at the museum?
+Will it be humid tonight?
+Is it dry this morning?
+Is it foggy at the train station?
+Is it raining at the office?
+Is it snowing at the cabin?
+Will it be sunny tomorrow morning?
+Is it cloudy at the stadium?
+Is it windy at the mountain?
+Is it raining at the schoolyard?
+Is it sunny at the playground?
+Will it be cold this afternoon?
+Is it warm at the mall?
+Is it raining at the grocery store?
+Is it sunny at the coffee shop?
+Will it be humid in the afternoon?
+Is it dry at the park?
+Is it foggy at the bus station?
+Is it raining at the cinema?
+Is it snowing at the lodge?
+Will it be sunny this evening?
+Is it cloudy at the zoo?
+Is it windy at the restaurant?
+Is it raining at the post office?
+Is it sunny at the bookstore?
+Will it be cold tonight?
+Is it warm at the stadium?
+Is it raining at the pharmacy?
+Is it sunny at the bakery?
+Will it be humid at the beach?
+Is it dry at the stadium?
+Is it foggy at the library?
+Is it raining at the gas station?
+Is it snowing at the airport?
+Will it be sunny next weekend?
+Is it cloudy at the museum?
+Is it windy at the zoo?
+Is it raining at the park?
+Is it sunny at the hospital?
+Will it be cold next weekend?
+Is it warm at the university?
+Is it raining at the mountain?
+Is it sunny at the lodge?
+Will it be humid at the stadium?
+Is it dry at the zoo?
+Is it foggy at the restaurant?
+Is it raining at the bakery?
+Is it snowing at the train station?
+Will it be sunny next month?
+Is it cloudy at the library?
+Is it windy at the mall?
+Is it raining at the bookstore?
+Is it sunny at the pharmacy?
+Will it be cold next month?
+Is it warm at the park?
+Is it raining at the zoo?
+Is it sunny at the gas station?
+Will it be humid at the museum?
+Is it dry at the mall?
+Is it foggy at the stadium?
+Is it raining at the university?
+Is it snowing at the restaurant?
+Will it be sunny next year?
+Is it cloudy at the bakery?
+Is it windy at the library?
+Is it raining at the lodge?
+Is it sunny at the train station?
+Will it be cold next year?
+Is it warm at the museum?
+Is it raining at the stadium?
+Is it sunny at the mountain?
+Will it be humid at the zoo?
+Is it dry at the library?
+Is it foggy at the mall?
+Is it raining at the park?
+Is it snowing at the hospital?
+Will it be sunny in the morning?
+Is it cloudy at the pharmacy?
+Is it windy at the bookstore?
+Is it raining at the university?
+Is it sunny at the restaurant?
+Will it be cold in the morning?
+Is it warm at the bakery?
+Is it raining at the library?
+Is it sunny at the mall?
+Will it be humid at the park?
+Is it dry at the hospital?
+Is it foggy at the zoo?
+Is it raining at the stadium?
+Is it snowing at the museum?
+Will it be sunny in the afternoon?
+Is it cloudy at the gas station?
+Is it windy at the university?
+Is it raining at the mountain?
+Is it sunny at the bakery?
+Will it be cold in the afternoon?
+Is it warm at the library?
+Is it raining at the mall?
+Is it sunny at the stadium?
+Will it be humid at the restaurant?
+Is it dry at the bakery?
+Is it foggy at the mountain?
+Is it raining at the zoo?
+Is it snowing at the park?
+Will it be sunny in the evening?
+Is it cloudy at the lodge?
+Is it windy at the pharmacy?
+Is it raining at the bookstore?
+Is it sunny at the university?
+Will it be cold in the evening?
+Is it warm at the stadium?
+Is it raining at the gas station?
+Is it sunny at the hospital?
+Will it be humid at the bakery?
+Is it dry at the mountain?
+Is it foggy at the university?
+Is it raining at the library?
+Is it snowing at the mall?
+Will it be sunny at noon?
+Is it cloudy at the restaurant?
+Is it windy at the stadium?
+Is it raining at the bakery?
+Is it sunny at the park?
+Will it be cold at noon?
+Is it warm at the mountain?
+Is it raining at the lodge?
+Is it sunny at the library?
+Will it be humid at the hospital?
+Is it dry at the university?
+Is it foggy at the stadium?
+Is it raining at the museum?
+Is it snowing at the bakery?
+Will it be sunny at midnight?
+Is it cloudy at the mall?
+Is it windy at the park?
+Is it raining at the mountain?
+Is it sunny at the lodge?
+Will it be cold at midnight?
+Is it warm at the hospital?
+Is it raining at the university?
+Is it sunny at the bakery?
+Will it be humid at the library?
+Is it dry at the lodge?
+Is it foggy at the park?
+Is it raining at the stadium?
+Is it snowing at the restaurant?
+Will it be sunny at sunrise?
+Is it cloudy at the university?
+Is it windy at the hospital?
+Is it raining at the library?
+Is it sunny at the mountain?
+Will it be cold at sunrise?
+Is it warm at the lodge?
+Is it raining at the park?
+Is it sunny at the stadium?
+Will it be humid at the mall?
+Is it dry at the restaurant?
+Is it foggy at the bakery?
+Is it raining at the mountain?
+Is it snowing at the university?
+Will it be sunny at sunset?
+Is it cloudy at the bakery?
+Is it windy at the lodge?
+Is it raining at the stadium?
+Is it sunny at the park?
+Will it be cold at sunset?
+Is it warm at the university?
+Is it raining at the restaurant?
+Is it sunny at the library?
+Will it be humid at the mountain?
+Is it dry at the stadium?
+Is it foggy at the lodge?
+Is it raining at the bakery?
+Is it snowing at the park?
+Will it be sunny on Monday?
+Is it cloudy on Monday?
+Is it windy on Monday?
+Is it raining on Monday?
+Is it sunny on Tuesday?
+Will it be cold on Tuesday?
+Is it warm on Tuesday?
+Is it raining on Tuesday?
+Is it sunny on Wednesday?
+Will it be humid on Wednesday?
+Is it dry on Wednesday?
+Is it foggy on Wednesday?
+Is it raining on Wednesday?
+Is it snowing on Wednesday?
+Will it be sunny on Thursday?
+Is it cloudy on Thursday?
+Is it windy on Thursday?
+Is it raining on Thursday?
+Is it sunny on Friday?
+Will it be cold on Friday?
+Is it warm on Friday?
+Is it raining on Friday?
+Is it sunny on Saturday?
+Will it be humid on Saturday?
+Is it dry on Saturday?
+Is it foggy on Saturday?
+Is it raining on Saturday?
+Is it snowing on Saturday?
+Will it be sunny on Sunday?
+Is it cloudy on Sunday?
+Is it windy on Sunday?
+Is it raining on Sunday?
+Is it sunny this morning?
+Will it be cold this morning?
+Is it warm this morning?
+Is it raining this morning?
+Is it sunny this afternoon?
+Will it be humid this afternoon?
+Is it dry this afternoon?
+Is it foggy this afternoon?
+Is it raining this afternoon?
+Is it snowing this afternoon?
+Will it be sunny this evening?
+Is it cloudy this evening?
+Is it windy this evening?
+Is it raining this evening?
+Is it sunny tonight?
+Will it be cold tonight?
+Is it warm tonight?
+Is it raining tonight?
+Is it sunny tomorrow morning?
+Will it be humid tomorrow morning?
+Is it dry tomorrow morning?
+Is it foggy tomorrow morning?
+Is it raining tomorrow morning?
+Is it snowing tomorrow morning?
+Will it be sunny tomorrow afternoon?
+Is it cloudy tomorrow afternoon?
+Is it windy tomorrow afternoon?
+Is it raining tomorrow afternoon?
+Is it sunny tomorrow evening?
+Will it be cold tomorrow evening?
+Is it warm tomorrow evening?
+Is it raining tomorrow evening?
+Is it sunny tomorrow night?
+Will it be humid tomorrow night?
+Is it dry tomorrow night?
+Is it foggy tomorrow night?
+Is it raining tomorrow night?
+Is it snowing tomorrow night?
+Will it be sunny next morning?
+Is it cloudy next morning?
+Is it windy next morning?
+Is it raining next morning?
+Is it sunny next afternoon?
+Will it be cold next afternoon?
+Is it warm next afternoon?
+Is it raining next afternoon?
+Is it sunny next evening?
+Will it be humid next evening?
+Is it dry next evening?
+Is it foggy next evening?
+Is it raining next evening?
+Is it snowing next evening?
+Will it be sunny next night?
+Is it cloudy next night?
+Is it windy next night?
+Is it raining next night?
+Is it sunny next weekend?
+Will it be cold next weekend?
+Is it warm next weekend?
+Is it raining next weekend?
+Is it sunny next month?
+Will it be humid next month?
+Is it dry next month?
+Is it foggy next month?
+Is it raining next month?
+Is it snowing next month?
+Will it be sunny next year?
+Is it cloudy next year?
+Is it windy next year?
+Is it raining next year?
+Is it sunny in my neighborhood?
+Will it be cold in my neighborhood?
+Is it warm in my neighborhood?
+Is it raining in my neighborhood?
+Is it sunny in my city?
+Will it be humid in my city?
+Is it dry in my city?
+Is it foggy in my city?
+Is it raining in my city?
+Is it snowing in my city?
+Will it be sunny in my state?
+Is it cloudy in my state?
+Is it windy in my state?
+Is it raining in my state?
+Is it sunny in my country?
+Will it be cold in my country?
+Is it warm in my country?
+Is it raining in my country?
+Is it sunny in my region?
+Will it be humid in my region?
+Is it dry in my region?
+Is it foggy in my region?
+Is it raining in my region?
+Is it snowing in my region?
+Will it be sunny in my area?
+Is it cloudy in my area?
+Is it windy in my area?
+Is it raining in my area?
+Is it sunny at my location?
+Will it be cold at my location?
+Is it warm at my location?
+Is it raining at my location?
+Is it sunny at my destination?
+Will it be humid at my destination?
+Is it dry at my destination?
+Is it foggy at my destination?
+Is it raining at my destination?
+Is it snowing at my destination?
+Will it be sunny at my workplace?
+Is it cloudy at my workplace?
+Is it windy at my workplace?
+Is it raining at my workplace?
+Is it sunny at my school?
+Will it be cold at my school?
+Is it warm at my school?
+Is it raining at my school?
+Is it sunny at my home?
+Will it be humid at my home?
+Is it dry at my home?
+Is it foggy at my home?
+Is it raining at my home?
+Is it snowing at my home?
+Will it be sunny at my friend's house?
+Is it cloudy at my friend's house?
+Is it windy at my friend's house?
+Is it raining at my friend's house?
+Is it sunny at my relative's house?
+Will it be cold at my relative's house?
+Is it warm at my relative's house?
+Is it raining at my relative's house?
+Is it sunny at my favorite place?
+Will it be humid at my favorite place?
+Is it dry at my favorite place?
+Is it foggy at my favorite place?
+Is it raining at my favorite place?
+Is it snowing at my favorite place?
+Will it be sunny at my vacation spot?
+Is it cloudy at my vacation spot?
+Is it windy at my vacation spot?
+Is it raining at my vacation spot?
+Is it sunny at my holiday destination?
+Will it be cold at my holiday destination?
+Is it warm at my holiday destination?
+Is it raining at my holiday destination?
+Is it sunny at my hotel?
+Will it be humid at my hotel?
+Is it dry at my hotel?
+Is it foggy at my hotel?
+Is it raining at my hotel?
+Is it snowing at my hotel?
+Will it be sunny at my campsite?
+Is it cloudy at my campsite?
+Is it windy at my campsite?
+Is it raining at my campsite?
+Is it sunny at my cabin?
+Will it be cold at my cabin?
+Is it warm at my cabin?
+Is it raining at my cabin?
+Is it sunny at my apartment?
+Will it be humid at my apartment?
+Is it dry at my apartment?
+Is it foggy at my apartment?
+Is it raining at my apartment?
+Is it snowing at my apartment?
+Will it be sunny at my house?
+Is it cloudy at my house?
+Is it windy at my house?
+Is it raining at my house?
+Is it sunny at my office?
+Will it be cold at my office?
+Is it warm at my office?
+Is it raining at my office?
+Is it sunny at my school?
+Will it be humid at my school?
+Is it dry at my school?
+Is it foggy at my school?
+Is it raining at my school?
+Is it snowing at my school?
+Will it be sunny at my university?
+Is it cloudy at my university?
+Is it windy at my university?
+Is it raining at my university?
+Is it sunny at my college?
+Will it be cold at my college?
+Is it warm at my college?
+Is it raining at my college?
+Is it sunny at my gym?
+Will it be humid at my gym?
+Is it dry at my gym?
+Is it foggy at my gym?
+Is it raining at my gym?
+Is it snowing at my gym?
+Will it be sunny at my club?
+Is it cloudy at my club?
+Is it windy at my club?
+Is it raining at my club?
+Is it sunny at my church?
+Will it be cold at my church?
+Is it warm at my church?
+Is it raining at my church?
+Is it sunny at my temple?
+Will it be humid at my temple?
+Is it dry at my temple?
+Is it foggy at my temple?
+Is it raining at my temple?
+Is it snowing at my temple?
+Will it be sunny at my mosque?
+Is it cloudy at my mosque?
+Is it windy at my mosque?
+Is it raining at my mosque?
+Is it sunny at my synagogue?
+Will it be cold at my synagogue?
+Is it warm at my synagogue?
+Is it raining at my synagogue?
+Is it sunny at my community center?
+Will it be humid at my community center?
+Is it dry at my community center?
+Is it foggy at my community center?
+Is it raining at my community center?
+Is it snowing at my community center?
+Will it be sunny at my shopping center?
+Is it cloudy at my shopping center?
+Is it windy at my shopping center?
+Is it raining at my shopping center?
+Is it sunny at my market?
+Will it be cold at my market?
+Is it warm at my market?
+Is it raining at my market?
+Is it sunny at my store?
+Will it be humid at my store?
+Is it dry at my store?
+Is it foggy at my store?
+Is it raining at my store?
+Is it snowing at my store?
+Will it be sunny at my restaurant?
+Is it cloudy at my restaurant?
+Is it windy at my restaurant?
+Is it raining at my restaurant?
+Is it sunny at my café?
+Will it be cold at my café?
+Is it warm at my café?
+Is it raining at my café?
+Is it sunny at my bar?
+Will it be humid at my bar?
+Is it dry at my bar?
+Is it foggy at my bar?
+Is it raining at my bar?
+Is it snowing at my bar?
+Will it be sunny at my pub?
+Is it cloudy at my pub?
+Is it windy at my pub?
+Is it raining at my pub?
+Is it sunny at my club?
+Will it be cold at my club?
+Is it warm at my club?
+Is it raining at my club?
+Is it sunny at my theater?
+Will it be humid at my theater?
+Is it dry at my theater?
+Is it foggy at my theater?
+Is it raining at my theater?
+Is it snowing at my theater?
+Will it be sunny at my cinema?
+Is it cloudy at my cinema?
+Is it windy at my cinema?
+Is it raining at my cinema?
+Is it sunny at my stadium?
+Will it be cold at my stadium?
+Is it warm at my stadium?
+Is it raining at my stadium?
+Is it sunny at my sports center?
+Will it be humid at my sports center?
+Is it dry at my sports center?
+Is it foggy at my sports center?
+Is it raining at my sports center?
+Is it snowing at my sports center?
+Will it be sunny at my gymnasium?
+Is it cloudy at my gymnasium?
+Is it windy at my gymnasium?
+Is it raining at my gymnasium?
+Is it sunny at my pool?
+Will it be cold at my pool?
+Is it warm at my pool?
+Is it raining at my pool?
+Is it sunny at my spa?
+Will it be humid at my spa?
+Is it dry at my spa?
+Is it foggy at my spa?
+Is it raining at my spa?
+Is it snowing at my spa?
+Will it be sunny at my salon?
+Is it cloudy at my salon?
+Is it windy at my salon?
+Is it raining at my salon?
+Is it sunny at my beauty parlor?
+Will it be cold at my beauty parlor?
+Is it warm at my beauty parlor?
+Is it raining at my beauty parlor?
+Is it sunny at my barber shop?
+Will it be humid at my barber shop?
+Is it dry at my barber shop?
+Is it foggy at my barber shop?
+Is it raining at my barber shop?
+Is it snowing at my barber shop?
+Will it be sunny at my doctor's office?
+Is it cloudy at my doctor's office?
+Is it windy at my doctor's office?
+Is it raining at my doctor's office?
+Is it sunny at my dentist's office?
+Will it be cold at my dentist's office?
+Is it warm at my dentist's office?
+Is it raining at my dentist's office?
+Is it sunny at my clinic?
+Will it be humid at my clinic?
+Is it dry at my clinic?
+Is it foggy at my clinic?
+Is it raining at my clinic?
+Is it snowing at my clinic?
+Will it be sunny at my hospital?
+Is it cloudy at my hospital?
+Is it windy at my hospital?
+Is it raining at my hospital?
+Is it sunny at my pharmacy?
+Will it be cold at my pharmacy?
+Is it warm at my pharmacy?
+Is it raining at my pharmacy?
+Is it sunny at my laboratory?
+Will it be humid at my laboratory?
+Is it dry at my laboratory?
+Is it foggy at my laboratory?
+Is it raining at my laboratory?
+Is it snowing at my laboratory?
+Will it be sunny at my research center?
+Is it cloudy at my research center?
+Is it windy at my research center?
+Is it raining at my research center?
+Is it sunny at my factory?
+Will it be cold at my factory?
+Is it warm at my factory?
+Is it raining at my factory?
+Is it sunny at my warehouse?
+Will it be humid at my warehouse?
+Is it dry at my warehouse?
+Is it foggy at my warehouse?
+Is it raining at my warehouse?
+Is it snowing at my warehouse?
+Will it be sunny at my office building?
+Is it cloudy at my office building?
+Is it windy at my office building?
+Is it raining at my office building?
+Is it sunny at my skyscraper?
+Will it be cold at my skyscraper?
+Is it warm at my skyscraper?
+Is it raining at my skyscraper?
+Is it sunny at my apartment complex?
+Will it be humid at my apartment complex?
+Is it dry at my apartment complex?
+Is it foggy at my apartment complex?
+Is it raining at my apartment complex?
+Is it snowing at my apartment complex?
+Will it be sunny at my neighborhood park?
+Is it cloudy at my neighborhood park?
+Is it windy at my neighborhood park?
+Is it raining at my neighborhood park?
+Is it sunny at my local lake?
+Will it be cold at my local lake?
+Is it warm at my local lake?
+Is it raining at my local lake?
+Is it sunny at my local river?
+Will it be humid at my local river?
+Is it dry at my local river?
+Is it foggy at my local river?
+Is it raining at my local river?
+Is it snowing at my local river?
+Will it be sunny at my local forest?
+Is it cloudy at my local forest?
+Is it windy at my local forest?
+Is it raining at my local forest?
+Is it sunny at my local mountain?
+Will it be cold at my local mountain?
+Is it warm at my local mountain?
+Is it raining at my local mountain?
+Is it sunny at my local beach?
+Will it be humid at my local beach?
+Is it dry at my local beach?
+Is it foggy at my local beach?
+Is it raining at my local beach?
+Is it snowing at my local beach?
+Will it be sunny at my local desert?
+Is it cloudy at my local desert?
+Is it windy at my local desert?
+Is it raining at my local desert?
+Is it sunny at my local island?
+Will it be cold at my local island?
+Is it warm at my local island?
+Is it raining at my local island?
+Is it sunny at my local peninsula?
+Will it be humid at my local peninsula?
+Is it dry at my local peninsula?
+Is it foggy at my local peninsula?
+Is it raining at my local peninsula?
+Is it snowing at my local peninsula?
+Will it be sunny at my local bay?
+Is it cloudy at my local bay?
+Is it windy at my local bay?
+Is it raining at my local bay?
+Is it sunny at my local harbor?
+Will it be cold at my local harbor?
+Is it warm at my local harbor?
+Is it raining at my local harbor?
+Is it sunny at my local port?
+Will it be humid at my local port?
+Is it dry at my local port?
+Is it foggy at my local port?
+Is it raining at my local port?
+Is it snowing at my local port?
+Will it be sunny at my local station?
+Is it cloudy at my local station?
+Is it windy at my local station?
+Is it raining at my local station?
+Is it sunny at my local terminal?
+Will it be cold at my local terminal?
+Is it warm at my local terminal?
+Is it raining at my local terminal?
+Is it sunny at my local depot?
+Will it be humid at my local depot?
+Is it dry at my local depot?
+Is it foggy at my local depot?
+Is it raining at my local depot?
+Is it snowing at my local depot?
+Will it be sunny at my local crossing?
+Is it cloudy at my local crossing?
+Is it windy at my local crossing?
+Is it raining at my local crossing?
+Is it sunny at my local intersection?
+Will it be cold at my local intersection?
+Is it warm at my local intersection?
+Is it raining at my local intersection?
+Is it sunny at my local roundabout?
+Will it be humid at my local roundabout?
+Is it dry at my local roundabout?
+Is it foggy at my local roundabout?
+Is it raining at my local roundabout?
+Is it snowing at my local roundabout?
+Will it be sunny at my local bridge?
+Is it cloudy at my local bridge?
+Is it windy at my local bridge?
+Is it raining at my local bridge?
+Is it sunny at my local tunnel?
+Will it be cold at my local tunnel?
+Is it warm at my local tunnel?
+Is it raining at my local tunnel?
+Is it sunny at my local highway?
+Will it be humid at my local highway?
+Is it dry at my local highway?
+Is it foggy at my local highway?
+Is it raining at my local highway?
+Is it snowing at my local highway?
+Will it be sunny at my local street?
+Is it cloudy at my local street?
+Is it windy at my local street?
+Is it raining at my local street?
+Is it sunny at my local avenue?
+Will it be cold at my local avenue?
+Is it warm at my local avenue?
+Is it raining at my local avenue?
+Is it sunny at my local boulevard?
+Will it be humid at my local boulevard?
+Is it dry at my local boulevard?
+Is it foggy at my local boulevard?
+Is it raining at my local boulevard?
+Is it snowing at my local boulevard?
+Will it be sunny at my local road?
+Is it cloudy at my local road?
+Is it windy at my local road?
+Is it raining at my local road?
+Is it sunny at my local lane?
+Will it be cold at my local lane?
+Is it warm at my local lane?
+Is it raining at my local lane?
+Is it sunny at my local drive?
+Will it be humid at my local drive?
+Is it dry at my local drive?
+Is it foggy at my local drive?
+Is it raining at my local drive?
+Is it snowing at my local drive?
