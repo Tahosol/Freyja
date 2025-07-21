@@ -1,69 +1,5 @@
-use std::error::Error;
-use std::fs;
-use std::path::PathBuf;
-
-fn read_data(path: &str) -> Result<Vec<String>, Box<dyn Error>> {
-    let dir = PathBuf::from(path);
-    let read_dir = fs::read_dir(dir)?;
-
-    let mut data_list = vec![];
-
-    for item in read_dir.into_iter() {
-        let item = item?;
-        if item.path().is_file() {
-            data_list.push(fs::read_to_string(item.path())?);
-        }
-    }
-
-    Ok(data_list)
-}
-
 use rusqlite::{Connection, Result};
-
-#[allow(dead_code)]
-pub fn train_in(path: &str) -> Result<(), Box<dyn Error>> {
-    let conn = Connection::open("db.sqlite")?;
-
-    conn.execute(
-        "CREATE TABLE IF NOT EXISTS conversation (
-                id   INTEGER PRIMARY KEY,
-                que  TEXT NOT NULL,
-                ans  TEXT NOT NULL
-            )",
-        (),
-    )?;
-    let data = match read_data(path) {
-        Ok(data) => data,
-        Err(e) => {
-            println!("{e}");
-            Vec::new()
-        }
-    };
-    for file in data {
-        let math: Data = match serde_yaml::from_str(&file) {
-            Ok(d) => d,
-            Err(e) => {
-                println!("Failed to parse YAML: {e}");
-                continue;
-            }
-        };
-        for item in math.conversations {
-            conn.execute(
-                "INSERT INTO conversation (que, ans) VALUES (?1, ?2)",
-                (&item[0], &item[1]),
-            )?;
-        }
-    }
-    Ok(())
-}
-
-use serde::Deserialize;
-
-#[derive(Debug, Deserialize)]
-struct Data {
-    #[allow(dead_code)]
-    conversations: Vec<Vec<String>>,
-}
+use std::error::Error;
 
 use bk_tree::{BKTree, metrics};
 
@@ -111,6 +47,12 @@ impl Elms {
         let random = random_range(0..error_answer.len());
         let error_code = error_answer[random].clone();
 
+        let command = modules::command::check(question);
+
+        if command.0 {
+            return Ok(command.1);
+        }
+
         if modules::weather::detect_weather_ask(question) {
             let weather = modules::weather::get();
             return Ok(weather);
@@ -145,5 +87,87 @@ pub fn talk(text: &str) {
     let dispatcher = Command::new("spd-say").arg("-w").arg(text).output();
     if let Some(e) = dispatcher.err() {
         eprint!("{e}")
+    }
+}
+
+use std::fs;
+use whisper_rs::{FullParams, SamplingStrategy, WhisperContext, WhisperContextParameters};
+
+pub fn litsen() -> String {
+    let model = "models/voice-input-english-74.bin";
+    return real_time_transcribe(model);
+}
+
+fn whisper_run(samples: &[i16], ctx: &WhisperContext) -> String {
+    let language = "en";
+    let mut state = ctx.create_state().expect("failed to create state");
+    let mut params = FullParams::new(SamplingStrategy::Greedy { best_of: 1 });
+
+    params.set_language(Some(&language));
+    params.set_print_special(false);
+    params.set_print_progress(false);
+    params.set_print_realtime(false);
+    params.set_print_timestamps(false);
+
+    let mut inter_samples = vec![Default::default(); samples.len()];
+    whisper_rs::convert_integer_to_float_audio(&samples, &mut inter_samples)
+        .expect("failed to convert audio data");
+
+    state
+        .full(params, &inter_samples[..])
+        .expect("failed to run model");
+
+    let num_segments = state
+        .full_n_segments()
+        .expect("failed to get number of segments");
+
+    let mut transcript = String::new();
+    for i in 0..num_segments {
+        transcript.push_str(
+            &state
+                .full_get_segment_text(i)
+                .expect("failed to get segment"),
+        );
+    }
+    transcript
+}
+
+fn real_time_transcribe(model_path: &str) -> String {
+    let ctx = WhisperContext::new_with_params(model_path, WhisperContextParameters::default())
+        .expect("failed to load model");
+
+    let cache = dirs::cache_dir().unwrap().join("Freyja");
+    let _ = fs::create_dir_all(&cache);
+
+    loop {
+        let recording = Command::new("rec")
+            .arg("chunk.wav")
+            .arg("channels")
+            .arg("1")
+            .arg("rate")
+            .arg("16000")
+            .arg("silence")
+            .arg("1")
+            .arg("0.1")
+            .arg("3%")
+            .arg("1")
+            .arg("1.0")
+            .arg("3%")
+            .current_dir(&cache)
+            .status()
+            .expect("Failed to record audio");
+
+        if recording.success() {
+            let samples: Vec<i16> = hound::WavReader::open(cache.join("chunk.wav"))
+                .unwrap()
+                .into_samples::<i16>()
+                .map(|x| x.unwrap())
+                .collect();
+
+            let transcript = whisper_run(&samples, &ctx);
+            if !transcript.trim().is_empty() {
+                return transcript;
+            }
+        }
     }
 }

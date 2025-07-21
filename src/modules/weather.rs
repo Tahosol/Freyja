@@ -7,7 +7,7 @@ pub fn get() -> String {
     if let Some(output) = curl.ok() {
         let re = Regex::new(r"\d+(\.\d+)?").unwrap(); // Regex to match integers and decimals
         let string_output = String::from_utf8_lossy(&output.stdout).to_string();
-        let slipt_from_cloud_icon: Vec<&str> = string_output.split("🌬️→").collect();
+        let slipt_from_cloud_icon: Vec<&str> = string_output.split("🌬️").collect();
         let wind_speed = slipt_from_cloud_icon.last().unwrap_or(&"NA").trim();
         let other_half = slipt_from_cloud_icon[0];
         let location_temp: Vec<String> = other_half.split(':').map(|e| e.to_string()).collect();
