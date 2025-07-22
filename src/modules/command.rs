@@ -1,8 +1,9 @@
 pub fn check(que: &str) -> (bool, String) {
-    if (que.contains("cava") && que.contains("open"))
-        || (que.contains("run") && que.contains("cava"))
-        || (que.contains("open")
-            && (que.contains("cover") || que.contains("carver") || que.contains("call vote")))
+    if (que.contains("cava")
+        || que.contains("cover")
+        || que.contains("carver")
+        || que.contains("call vote"))
+        || que.contains("kava") && (que.contains("open") || que.contains("run"))
     {
         (true, command_cava())
     } else if (que.contains("open")
