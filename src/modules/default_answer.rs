@@ -1,5 +1,6 @@
 use std::fs;
 
+#[allow(dead_code)]
 pub fn get() -> Vec<String> {
     match fs::read_to_string("default/default.txt") {
         Ok(list) => {

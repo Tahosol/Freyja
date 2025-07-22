@@ -25,29 +25,31 @@ pub fn get() -> String {
     }
 }
 
-use bk_tree::{BKTree, metrics};
+// use bk_tree::{BKTree, metrics};
 
 pub fn detect_weather_ask(que: &str) -> bool {
     if que.contains("weather") {
         return true;
+    } else {
+        return false;
     }
-    let tree = geta();
-    let find = tree.find(que, 5).collect::<Vec<_>>();
-    if find.is_empty() { false } else { true }
+    // let tree = geta();
+    // let find = tree.find(que, 5).collect::<Vec<_>>();
+    // if find.is_empty() { false } else { true }
 }
 
-use std::fs;
-fn geta() -> BKTree<String> {
-    let mut tree: BKTree<String> = BKTree::new(metrics::Levenshtein);
-    match fs::read_to_string("default/weather.txt") {
-        Ok(list) => {
-            for line in list.lines() {
-                tree.add(line.to_string());
-            }
-        }
-        Err(e) => {
-            println!("Can't find default {e}");
-        }
-    }
-    tree
-}
+// use std::fs;
+// fn geta() -> BKTree<String> {
+//     let mut tree: BKTree<String> = BKTree::new(metrics::Levenshtein);
+//     match fs::read_to_string("default/weather.txt") {
+//         Ok(list) => {
+//             for line in list.lines() {
+//                 tree.add(line.to_string());
+//             }
+//         }
+//         Err(e) => {
+//             println!("Can't find default {e}");
+//         }
+//     }
+//     tree
+// }

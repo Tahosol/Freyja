@@ -13,6 +13,10 @@ pub fn check(que: &str) -> (bool, String) {
         && (que.contains("music") || que.contains("song") || que.contains("songs"))
     {
         (true, command_elisa())
+    } else if (que.contains("update") || que.contains("updates") || que.contains("pacman"))
+        && (que.contains("system") || que.contains("arch") || que.contains("linux"))
+    {
+        (true, command_pacman_update())
     } else {
         (false, String::new())
     }
@@ -23,6 +27,18 @@ use std::process::Command;
 fn command_cava() -> String {
     let _ = Command::new("kitty").arg("--hold").arg("cava").spawn();
     "Okay, I will run cava. Enjoy your music!".to_string()
+}
+
+fn command_pacman_update() -> String {
+    let _ = Command::new("kitty")
+        .arg("--hold")
+        .arg("sudo")
+        .arg("pacman")
+        .arg("-Syu")
+        .arg("--noconfirm")
+        .spawn();
+    "Sure, I will run `pacman -Syu` in the Kitty terminal. Please enter your password if prompted."
+        .to_string()
 }
 
 use rand::random_range;
