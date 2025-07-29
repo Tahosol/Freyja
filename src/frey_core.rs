@@ -106,10 +106,10 @@ fn real_time_transcribe(model_path: &str) -> String {
             .arg("silence")
             .arg("1")
             .arg("0.1")
-            .arg("4%")
+            .arg("3.3%")
             .arg("1")
             .arg("1.0")
-            .arg("4%")
+            .arg("3.3%")
             .current_dir(&cache)
             .status()
             .expect("Failed to record audio");
