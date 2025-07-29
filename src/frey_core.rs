@@ -1,16 +1,24 @@
 use std::error::Error;
 
-#[derive(Default)]
-pub struct Elms {}
+pub struct Elms {
+    pub command: bool,
+}
+
+impl Default for Elms {
+    fn default() -> Self {
+        Self { command: false }
+    }
+}
 
 use crate::modules;
 use ollama_rs::{Ollama, generation::completion::request::GenerationRequest};
 
 impl Elms {
-    pub async fn get_answer(&self, question: &str) -> Result<String, Box<dyn Error>> {
+    pub async fn get_answer(&mut self, question: &str) -> Result<String, Box<dyn Error>> {
         let command = modules::command::check(question);
 
         if command.0 {
+            self.command = true;
             return Ok(command.1);
         }
 
@@ -29,29 +37,6 @@ impl Elms {
         } else {
             return Ok("Silent..".to_string());
         }
-        // let answer = self.memory.find(question, 5).collect::<Vec<_>>();
-        // if let Some((_, text)) = answer.iter().min_by_key(|&(num, _)| *num).cloned() {
-        //     let mut stmt = self
-        //         .data_connection
-        //         .prepare("SELECT ans FROM conversation WHERE que = ?")?;
-        //     let answers_iter = stmt.query_map([text], |row| row.get::<_, String>(0))?;
-        //     let mut answers = Vec::new();
-        //     for answer in answers_iter {
-        //         answers.push(answer?);
-        //     }
-        //     if !answers.is_empty() {
-        //         let random = random_range(0..answers.len());
-        //         if let Some(selected) = answers.get(random) {
-        //             return Ok(selected.clone());
-        //         } else {
-        //             return Err(error_code.into());
-        //         }
-        //     } else {
-        //         return Err(error_code.into());
-        //     }
-        // } else {
-        //     return Err(error_code.into());
-        // }
     }
 }
 use std::process::Command;
@@ -65,8 +50,7 @@ pub fn talk(text: &str) {
 use std::fs;
 use whisper_rs::{FullParams, SamplingStrategy, WhisperContext, WhisperContextParameters};
 
-pub fn litsen() -> String {
-    let model = "models/voice-input-english-74.bin";
+pub fn litsen(model: &str) -> String {
     return real_time_transcribe(model);
 }
 
@@ -122,10 +106,10 @@ fn real_time_transcribe(model_path: &str) -> String {
             .arg("silence")
             .arg("1")
             .arg("0.1")
-            .arg("3%")
+            .arg("4%")
             .arg("1")
             .arg("1.0")
-            .arg("3%")
+            .arg("4%")
             .current_dir(&cache)
             .status()
             .expect("Failed to record audio");

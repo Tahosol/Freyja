@@ -1,1 +1,1 @@
-This place should be for whisper.cpp model
+<remove this line then put model path here>

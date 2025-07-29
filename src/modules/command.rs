@@ -22,10 +22,15 @@ pub fn check(que: &str) -> (bool, String) {
     }
 }
 
-use std::process::Command;
+use std::path::{Path, PathBuf};
+use std::{error::Error, process::Command};
 
 fn command_cava() -> String {
-    let _ = Command::new("kitty").arg("--hold").arg("cava").spawn();
+    let _ = Command::new("setsid")
+        .arg("kitty")
+        .arg("--hold")
+        .arg("cava")
+        .spawn();
     "Okay, I will run cava. Enjoy your music!".to_string()
 }
 
@@ -41,42 +46,78 @@ fn command_pacman_update() -> String {
         .to_string()
 }
 
-use rand::random_range;
+use rand;
+use rand::seq::SliceRandom;
 use std::fs;
-
 fn command_elisa() -> String {
     let music_dir = dirs::audio_dir().unwrap();
+    let mut folders: Vec<PathBuf> = Vec::new();
+    let mut music_files: Vec<PathBuf> = Vec::new();
 
-    match fs::read_dir(music_dir) {
-        Ok(read_entry) => {
-            let entries: Vec<_> = read_entry.map(|e| e.ok()).collect();
-            let random_choice = random_range(0..entries.len());
-            let folder_entry = &entries[random_choice];
-            if let Some(e) = folder_entry {
-                let path = e.path();
-                if path.is_file() {
-                    let _ = Command::new("setsid").arg("elisa").arg(path).spawn();
-                    return "Sure, I will play a random song now".to_string();
-                } else {
-                    let read = fs::read_dir(path);
-                    if let Some(e) = read.ok() {
-                        let entries: Vec<_> = e.map(|e| e.ok()).collect();
-                        let random_choice = random_range(0..entries.len());
-                        let folder_entry = &entries[random_choice];
-                        if let Some(e) = folder_entry {
-                            let _ = Command::new("setsid").arg("elisa").arg(e.path()).spawn();
-                            return "Sure, I will play a random song now".to_string();
-                        } else {
-                            return "Sorry, I fail to open the second entry file".to_string();
-                        }
-                    } else {
-                        return "Sorry, I fail to open the second entry folder".to_string();
+    let mut first_read = find_music(vec![music_dir]);
+    if !first_read.0.is_empty() {
+        music_files.append(&mut first_read.0);
+    }
+    if !first_read.1.is_empty() {
+        folders = first_read.1;
+    }
+    loop {
+        let mut read = find_music(folders.clone());
+        if !read.0.is_empty() {
+            music_files.append(&mut read.0);
+        }
+        if !read.1.is_empty() {
+            folders = read.1;
+        } else {
+            break;
+        }
+    }
+    let mut random = rand::rng();
+    music_files.shuffle(&mut random);
+    let mut command = Command::new("setsid");
+    command.arg("elisa");
+
+    for song in music_files {
+        command.arg(song);
+    }
+    let _ = command.spawn();
+    return "Sure, I will play some random songs now".to_string();
+}
+
+use std::fs::DirEntry;
+
+fn read_dir_return_entries(dir: &Path) -> Result<Vec<DirEntry>, Box<dyn Error>> {
+    let vec_of_direntry: Vec<_> = fs::read_dir(dir)?.filter_map(|e| e.ok()).collect();
+    Ok(vec_of_direntry)
+}
+
+fn detect_music(dir: &Path) -> bool {
+    let match_ext = vec![
+        "mp3", "flac", "wav", "ogg", "m4a", "aac", "wma", "opus", "aiff", "alac",
+    ];
+    if match_ext.contains(&dir.extension().and_then(|dir| dir.to_str()).unwrap()) {
+        true
+    } else {
+        false
+    }
+}
+
+fn find_music(dir: Vec<PathBuf>) -> (Vec<PathBuf>, Vec<PathBuf>) {
+    let mut musics = Vec::new();
+    let mut paths = Vec::new();
+    for es in dir {
+        match read_dir_return_entries(&es) {
+            Ok(e) => {
+                for s in e {
+                    if s.path().is_dir() {
+                        paths.push(s.path());
+                    } else if detect_music(&s.path()) {
+                        musics.push(s.path());
                     }
                 }
-            } else {
-                return "Sorry, I fail to read the folder_entry".to_string();
             }
+            Err(_) => {}
         }
-        Err(_) => "Sorry, I fail to read the music directory.".to_string(),
     }
+    (musics, paths)
 }

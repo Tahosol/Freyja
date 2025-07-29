@@ -5,11 +5,15 @@ use colored::Colorize;
 
 #[tokio::main]
 async fn main() {
-    let freyja = frey_core::Elms::default();
+    let model = include_str!("../models/readme.md");
+    let mut freyja = frey_core::Elms::default();
     println!("Freyja: Hi how can I help you?");
     frey_core::talk("Hi how can I help you?");
     loop {
-        let input = frey_core::litsen();
+        if freyja.command {
+            break;
+        }
+        let input = frey_core::litsen(model);
         println!("{}{}", "User: ".bold(), input.bold());
         let input = input.trim().to_lowercase();
         if (input.contains("stop") && input.contains("chat")) || input.contains("bye") {
