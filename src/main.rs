@@ -5,7 +5,7 @@ use colored::Colorize;
 
 #[tokio::main]
 async fn main() {
-    let model = include_str!("../models/readme.md").trim();
+    let model = include_str!("../models/readme.txt").trim();
     let mut freyja = frey_core::Elms::default();
     println!("Freyja: Hi how can I help you?");
     frey_core::talk("Hi how can I help you?");
