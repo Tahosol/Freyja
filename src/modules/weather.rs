@@ -5,7 +5,7 @@ pub fn get() -> String {
         .arg("https://wttr.in/?format=4")
         .output();
     if let Some(output) = curl.ok() {
-        let re = Regex::new(r"\d+(\.\d+)?").unwrap(); // Regex to match integers and decimals
+        let re = Regex::new(r"\d+(\.\d+)?").unwrap();
         let string_output = String::from_utf8_lossy(&output.stdout).to_string();
         let slipt_from_cloud_icon: Vec<&str> = string_output.split("🌬️").collect();
         let wind_speed = slipt_from_cloud_icon.last().unwrap_or(&"NA").trim();
@@ -25,31 +25,10 @@ pub fn get() -> String {
     }
 }
 
-// use bk_tree::{BKTree, metrics};
-
 pub fn detect_weather_ask(que: &str) -> bool {
     if que.contains("weather") {
         return true;
     } else {
         return false;
     }
-    // let tree = geta();
-    // let find = tree.find(que, 5).collect::<Vec<_>>();
-    // if find.is_empty() { false } else { true }
 }
-
-// use std::fs;
-// fn geta() -> BKTree<String> {
-//     let mut tree: BKTree<String> = BKTree::new(metrics::Levenshtein);
-//     match fs::read_to_string("default/weather.txt") {
-//         Ok(list) => {
-//             for line in list.lines() {
-//                 tree.add(line.to_string());
-//             }
-//         }
-//         Err(e) => {
-//             println!("Can't find default {e}");
-//         }
-//     }
-//     tree
-// }
