@@ -1,1 +1,1 @@
-<remove this line then put model path here>
+<put whisper model path here before build>
