@@ -17,6 +17,8 @@ pub fn check(que: &str) -> (bool, String) {
         && (que.contains("system") || que.contains("arch") || que.contains("linux"))
     {
         (true, command_pacman_update())
+    } else if que.contains("code") && que.contains("editor") {
+        (true, command_code())
     } else {
         (false, String::new())
     }
@@ -32,6 +34,11 @@ fn command_cava() -> String {
         .arg("cava")
         .spawn();
     "Okay, I will run cava. Enjoy your music!".to_string()
+}
+
+fn command_code() -> String {
+    let _ = Command::new("setsid").arg("zeditor").spawn();
+    "Sure, I will open your code editor now!".to_string()
 }
 
 fn command_pacman_update() -> String {
