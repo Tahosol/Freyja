@@ -1,0 +1,4 @@
+whisper_model_path = ""
+ollama_host = "http://127.0.0.1"
+ollama_port = 11434
+ollama_model = "llama3.2"        #If you have a potato pc you can run even smaller model like smollm2:135m https://ollama.com/library/smollm2

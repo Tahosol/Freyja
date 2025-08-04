@@ -1,0 +1,14 @@
+#ALL TOML FILE MUST BE PUT IN THE ~.config/freyja/actions
+
+sudo = false
+#The command that you want to execute
+main_command = "echo"
+#this can be a list of args for the main command
+args = ["This is an example for Freyja action"]
+
+in_terminal = true #Do Freyja run the command in a new open terminal or not
+terminal = "kitty" #Terminal you want the command to run
+
+key_word = ["example", "run"] #The keywords that will make freyja execute action
+
+return_message = "I am happy to show you the example!" #The message freyja will return when action is executed

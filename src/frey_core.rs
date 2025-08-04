@@ -10,12 +10,23 @@ impl Default for Elms {
     }
 }
 
-use crate::modules;
+use crate::modules::{self, action};
 use ollama_rs::{Ollama, generation::completion::request::GenerationRequest};
 
 impl Elms {
-    pub async fn get_answer(&mut self, question: &str) -> Result<String, Box<dyn Error>> {
+    pub async fn get_answer(
+        &mut self,
+        question: &str,
+        host: &str,
+        port: u16,
+        model: &str,
+    ) -> Result<String, Box<dyn Error>> {
         let command = modules::command::check(question);
+        let custom_command = action::check(question);
+        if custom_command.0 {
+            self.command = true;
+            return Ok(custom_command.1);
+        }
 
         if command.0 {
             self.command = true;
@@ -26,10 +37,9 @@ impl Elms {
             let weather = modules::weather::get();
             return Ok(weather);
         }
-        let ollama = Ollama::default();
-        let model = "freyja_gama".to_string();
+        let ollama = Ollama::new(host, port);
         let res = ollama
-            .generate(GenerationRequest::new(model, question))
+            .generate(GenerationRequest::new(model.to_string(), question).think(false))
             .await;
 
         if let Ok(res) = res {
@@ -41,10 +51,7 @@ impl Elms {
 }
 use std::process::Command;
 pub fn talk(text: &str) {
-    let dispatcher = Command::new("spd-say").arg("-w").arg(text).output();
-    if let Some(e) = dispatcher.err() {
-        eprint!("{e}")
-    }
+    let _ = Command::new("spd-say").arg("-w").arg(text).output();
 }
 
 use std::fs;
@@ -106,10 +113,10 @@ fn real_time_transcribe(model_path: &str) -> String {
             .arg("silence")
             .arg("1")
             .arg("0.1")
-            .arg("3.3%")
+            .arg("3%")
             .arg("1")
             .arg("1.0")
-            .arg("3.3%")
+            .arg("3%")
             .current_dir(&cache)
             .status()
             .expect("Failed to record audio");
