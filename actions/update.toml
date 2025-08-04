@@ -1,0 +1,11 @@
+sudo = true
+main_command = "pacman"
+args = ["-Syu", "--noconfirm"]
+
+in_terminal = true
+terminal = "kitty"
+
+key_word = [["system", "update"], ["arch", "update"]]
+
+
+return_message = "Sure, I will run `pacman -Syu` in the Kitty terminal. Please enter your password if prompted."

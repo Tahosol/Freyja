@@ -23,12 +23,11 @@ impl Elms {
     ) -> Result<String, Box<dyn Error>> {
         let command = modules::command::check(question);
         let custom_command = action::check(question);
+
         if custom_command.0 {
             self.command = true;
             return Ok(custom_command.1);
-        }
-
-        if command.0 {
+        } else if command.0 {
             self.command = true;
             return Ok(command.1);
         }
@@ -113,10 +112,10 @@ fn real_time_transcribe(model_path: &str) -> String {
             .arg("silence")
             .arg("1")
             .arg("0.1")
-            .arg("3%")
+            .arg("2%")
             .arg("1")
             .arg("1.0")
-            .arg("3%")
+            .arg("2%")
             .current_dir(&cache)
             .status()
             .expect("Failed to record audio");

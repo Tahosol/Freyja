@@ -45,7 +45,7 @@ async fn main() {
         let stdin_handle = tokio::spawn(async {
             let mut user_input = String::new();
             if std::io::stdin().read_line(&mut user_input).is_ok() {
-                if user_input.trim() == "-s" {
+                if user_input == "\n" {
                     return true;
                 }
             }

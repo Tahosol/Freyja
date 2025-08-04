@@ -1,0 +1,11 @@
+sudo = false
+main_command = "zeditor"
+args = [""]
+
+in_terminal = false
+terminal = "kitty"
+
+key_word = [["open", "code", "editor"], ["run", "code", "editor"]]
+
+
+return_message = "Sure, I will open your IDE now!"

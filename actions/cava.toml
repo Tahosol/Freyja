@@ -1,0 +1,28 @@
+sudo = false
+main_command = "cava"
+args = [""]
+
+in_terminal = true
+terminal = "kitty"
+
+key_word = [
+    [
+        "kava",
+        "run",
+    ],
+    [
+        "run",
+        "cover",
+    ],
+    [
+        "kava",
+        "open",
+    ],
+    [
+        "cover",
+        "open",
+    ],
+]
+
+
+return_message = "Okay, I will run cava. Enjoy your music!"

@@ -9,6 +9,9 @@ args = ["This is an example for Freyja action"]
 in_terminal = true #Do Freyja run the command in a new open terminal or not
 terminal = "kitty" #Terminal you want the command to run
 
-key_word = ["example", "run"] #The keywords that will make freyja execute action
+key_word = [["example", "run"], ["open", "example"]]
+# The keywords that will make Freyja execute an action come in lists of lists. If one of the lists is in the prompt, the action will run.
+# In this example, you can say "(sometext)...run...(sometext)...example" or "(sometext)...open...(sometext)...example"; both will execute the example.
+
 
 return_message = "I am happy to show you the example!" #The message freyja will return when action is executed

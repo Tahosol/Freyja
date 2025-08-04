@@ -1,22 +1,11 @@
 pub fn check(que: &str) -> (bool, String) {
-    if (que.contains("cava")
-        || que.contains("cover")
-        || que.contains("carver")
-        || que.contains("call vote"))
-        || que.contains("kava") && (que.contains("open") || que.contains("run"))
-    {
-        (true, command_cava())
-    } else if (que.contains("open")
+    if (que.contains("open")
         || que.contains("run")
         || que.contains("play")
         || que.contains("plays"))
         && (que.contains("music") || que.contains("song") || que.contains("songs"))
     {
         (true, command_elisa())
-    } else if (que.contains("update") || que.contains("updates") || que.contains("pacman"))
-        && (que.contains("system") || que.contains("arch") || que.contains("linux"))
-    {
-        (true, command_pacman_update())
     } else if que.contains("code") && que.contains("editor") {
         (true, command_code())
     } else {
@@ -27,30 +16,9 @@ pub fn check(que: &str) -> (bool, String) {
 use std::path::{Path, PathBuf};
 use std::{error::Error, process::Command};
 
-fn command_cava() -> String {
-    let _ = Command::new("setsid")
-        .arg("kitty")
-        .arg("--hold")
-        .arg("cava")
-        .spawn();
-    "Okay, I will run cava. Enjoy your music!".to_string()
-}
-
 fn command_code() -> String {
     let _ = Command::new("setsid").arg("zeditor").spawn();
     "Sure, I will open your code editor now!".to_string()
-}
-
-fn command_pacman_update() -> String {
-    let _ = Command::new("kitty")
-        .arg("--hold")
-        .arg("sudo")
-        .arg("pacman")
-        .arg("-Syu")
-        .arg("--noconfirm")
-        .spawn();
-    "Sure, I will run `pacman -Syu` in the Kitty terminal. Please enter your password if prompted."
-        .to_string()
 }
 
 use rand;

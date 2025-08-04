@@ -7,7 +7,7 @@ struct Action {
     sudo: bool,
     main_command: String,
     args: Vec<String>,
-    key_word: Vec<String>,
+    key_word: Vec<Vec<String>>,
     return_message: String,
 }
 
@@ -36,10 +36,11 @@ pub fn check(que: &str) -> (bool, String) {
     }
 }
 
-fn contains_keywords(text: &str, keywords: &Vec<String>) -> bool {
+fn contains_keywords(text: &str, keywords: &Vec<Vec<String>>) -> bool {
+    let text_lower = text.to_lowercase();
     keywords
         .iter()
-        .all(|keyword| text.contains(&keyword.to_lowercase()))
+        .any(|keys| keys.iter().all(|a| text_lower.contains(&a.to_lowercase())))
 }
 
 use std::process::Command;
