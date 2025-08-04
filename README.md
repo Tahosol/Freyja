@@ -1,3 +1,3 @@
 # Freyja
 
-Freyja is not build to work on any machine except mine. It can work on other machine but some functionality WILL be broken.
+Freyja is an AI assistant that works locally and can perform actions (i.e., commands). Even though it is still highly experimental, Freyja should now work reasonably well on any Linux computer if it is configured properly.
