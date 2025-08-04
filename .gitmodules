@@ -1,0 +1,3 @@
+[submodule "wakeup-for-freyja"]
+	path = wakeup-for-freyja
+	url = https://github.com/Tahosol/wakeup-for-freyja
