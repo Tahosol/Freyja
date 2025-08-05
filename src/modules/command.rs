@@ -6,8 +6,6 @@ pub fn check(que: &str) -> (bool, String) {
         && (que.contains("music") || que.contains("song") || que.contains("songs"))
     {
         (true, command_elisa())
-    } else if que.contains("code") && que.contains("editor") {
-        (true, command_code())
     } else {
         (false, String::new())
     }
@@ -15,11 +13,6 @@ pub fn check(que: &str) -> (bool, String) {
 
 use std::path::{Path, PathBuf};
 use std::{error::Error, process::Command};
-
-fn command_code() -> String {
-    let _ = Command::new("setsid").arg("zeditor").spawn();
-    "Sure, I will open your code editor now!".to_string()
-}
 
 use rand;
 use rand::seq::SliceRandom;
