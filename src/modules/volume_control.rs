@@ -1,15 +1,14 @@
 use std::{error::Error, process::Command};
 
-pub fn mute() -> Result<(), Box<dyn Error>> {
-    Command::new("wpctl")
-        .args(&["set-mute", "@DEFAULT_AUDIO_SINK@", "1"])
+pub fn pause() -> Result<(), Box<dyn Error>> {
+    Command::new("playerctl")
+        .args(&["pause", "--all-players"])
         .output()?;
     Ok(())
 }
-
-pub fn unmute() -> Result<(), Box<dyn Error>> {
-    Command::new("wpctl")
-        .args(&["set-mute", "@DEFAULT_AUDIO_SINK@", "0"])
+pub fn play() -> Result<(), Box<dyn Error>> {
+    Command::new("playerctl")
+        .args(&["play", "--all-players"])
         .output()?;
     Ok(())
 }

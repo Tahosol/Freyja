@@ -102,7 +102,7 @@ fn real_time_transcribe(model_path: &str) -> String {
     let _ = fs::create_dir_all(&cache);
 
     loop {
-        let _ = modules::volume_control::mute();
+        let _ = modules::volume_control::pause();
         let recording = Command::new("rec")
             .arg("chunk.wav")
             .arg("channels")
@@ -129,7 +129,7 @@ fn real_time_transcribe(model_path: &str) -> String {
 
             let transcript = whisper_run(&samples, &ctx);
             if !transcript.trim().is_empty() {
-                let _ = modules::volume_control::unmute();
+                let _ = modules::volume_control::play();
                 return transcript;
             }
         }
