@@ -44,7 +44,7 @@ impl Elms {
         if let Ok(res) = res {
             return Ok(res.response);
         } else {
-            return Ok("Silent..".to_string());
+            return Ok("Silent.. (There seems to be an issue with the Ollama setup)".to_string());
         }
     }
 }
