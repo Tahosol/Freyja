@@ -7,8 +7,6 @@ pub fn pause() -> Result<(), Box<dyn Error>> {
     Ok(())
 }
 pub fn play() -> Result<(), Box<dyn Error>> {
-    Command::new("playerctl")
-        .args(&["play", "--all-players"])
-        .output()?;
+    Command::new("playerctl").arg("play").output()?;
     Ok(())
 }
