@@ -26,7 +26,7 @@ Here is a brief list of dependencies:
 
 ## Clone This Repo
 ```
-git clone https://github.com/Tahosol/Freyja.git
+git clone --recurse-submodules -j8 https://github.com/Tahosol/Freyja.git
 cd Freyja
 ```
 
